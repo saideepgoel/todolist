@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📚 Subject-Wise To-Do List</h1>
+
+  <!-- Motivational message -->
+  <div id="motivation" class="motivation-msg">Let's crush today's tasks! 💪</div>
+
+  <div class="grid-container">
+    <!-- Physics -->
+    <div class="subject" id="physics" draggable="true">
+      <h2>Physics</h2>
+      <div class="task-input">
+        <input type="text" placeholder="Add Physics task..." id="physics-input">
+        <button onclick="addTask('physics')">Add</button>
+      </div>
+      <ul id="physics-list" class="task-list"></ul>
+    </div>
+
+    <!-- Maths -->
+    <div class="subject" id="maths" draggable="true">
+      <h2>Maths</h2>
+      <div class="task-input">
+        <input type="text" placeholder="Add Maths task..." id="maths-input">
+        <button onclick="addTask('maths')">Add</button>
+      </div>
+      <ul id="maths-list" class="task-list"></ul>
+    </div>
+
+    <!-- Chemistry -->
+    <div class="subject" id="chemistry" draggable="true">
+      <h2>Chemistry</h2>
+      <div class="task-input">
+        <input type="text" placeholder="Add Chemistry task..." id="chemistry-input">
+        <button onclick="addTask('chemistry')">Add</button>
+      </div>
+      <ul id="chemistry-list" class="task-list"></ul>
+    </div>
+
+    <!-- Others -->
+    <div class="subject" id="others" draggable="true">
+      <h2>Others</h2>
+      <div class="task-input">
+        <input type="text" placeholder="Add Other task..." id="others-input">
+        <button onclick="addTask('others')">Add</button>
+      </div>
+      <ul id="others-list" class="task-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
