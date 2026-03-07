@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JEE Study Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>JEE Study Planner</h1>
+    <p>Plan your daily preparation and add tasks subject-wise.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Add New Task</h2>
+      <form id="task-form" class="task-form">
+        <div class="field-group">
+          <label for="subject">Subject</label>
+          <select id="subject" required>
+            <option value="">Select subject</option>
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Mathematics">Mathematics</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="task">Task</label>
+          <input id="task" type="text" placeholder="e.g., Revise Electrostatics formulas" required />
+        </div>
+
+        <div class="field-group">
+          <label for="deadline">Deadline</label>
+          <input id="deadline" type="date" />
+        </div>
+
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <section class="card overview">
+      <h2>Progress Overview</h2>
+      <div class="stats">
+        <div><strong id="total-tasks">0</strong><span>Total Tasks</span></div>
+        <div><strong id="completed-tasks">0</strong><span>Completed</span></div>
+        <div><strong id="pending-tasks">0</strong><span>Pending</span></div>
+      </div>
+    </section>
+
+    <section class="task-columns">
+      <article class="card task-list-card">
+        <h3>Physics</h3>
+        <ul id="Physics" class="task-list"></ul>
+      </article>
+
+      <article class="card task-list-card">
+        <h3>Chemistry</h3>
+        <ul id="Chemistry" class="task-list"></ul>
+      </article>
+
+      <article class="card task-list-card">
+        <h3>Mathematics</h3>
+        <ul id="Mathematics" class="task-list"></ul>
+      </article>
+    </section>
+  </main>
+
+  <template id="task-template">
+    <li class="task-item">
+      <label class="task-content">
+        <input type="checkbox" class="task-check" />
+        <span class="task-text"></span>
+      </label>
+      <div class="task-meta"></div>
+      <button class="delete-btn" type="button" aria-label="Delete task">Delete</button>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
