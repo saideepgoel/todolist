@@ -12,6 +12,7 @@
   --phys: #2f4fd0;
   --chem: #0b7a54;
   --math: #b45309;
+  --other: #b8336a;
   --danger: #b93227;
   --warn: #935c00;
   --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
@@ -35,6 +36,7 @@
     --phys: #8ba3ff;
     --chem: #4fcb98;
     --math: #ffa85c;
+    --other: #ff8fb8;
     --danger: #ff8a7e;
     --warn: #f2b65a;
     color-scheme: dark;
@@ -53,6 +55,7 @@
   --phys: #8ba3ff;
   --chem: #4fcb98;
   --math: #ffa85c;
+    --other: #ff8fb8;
   --danger: #ff8a7e;
   --warn: #f2b65a;
   color-scheme: dark;
@@ -188,7 +191,7 @@ input:focus-visible, select:focus-visible { border-color: var(--ink); outline-of
 .btn-quiet[hidden] { display: none; }
 
 /* ---------- Subject columns ---------- */
-.board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; }
+.board { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
 .col {
   --c: var(--phys);
   background: var(--surface); border: 1px solid var(--line);
@@ -196,6 +199,7 @@ input:focus-visible, select:focus-visible { border-color: var(--ink); outline-of
 }
 .col[data-subject="chemistry"] { --c: var(--chem); }
 .col[data-subject="mathematics"] { --c: var(--math); }
+.col[data-subject="other"] { --c: var(--other); }
 .col-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
 .col h3 { margin: 0; font-family: var(--display); font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; }
 .col-count { color: var(--muted); font-size: 0.85rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -269,7 +273,6 @@ input:focus-visible, select:focus-visible { border-color: var(--ink); outline-of
   .add-form { grid-template-columns: 1fr 1fr; }
   .add-form .field-task { grid-column: 1 / -1; }
   .add-form .btn-primary { grid-column: 1 / -1; }
-  .board { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 16px; }
   .stat:nth-child(4) { border-left: 0; padding-left: 0; }
 }
@@ -282,6 +285,9 @@ input:focus-visible, select:focus-visible { border-color: var(--ink); outline-of
   .toolbar .spacer { display: none; }
   .toolbar input[type="search"], .toolbar select { flex: 1 1 140px; width: auto; }
   .exam { width: 100%; }
+}
+@media (max-width: 720px) {
+  .board { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }

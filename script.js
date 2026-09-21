@@ -5,7 +5,8 @@
   var SUBJECTS = [
     { id: 'physics', name: 'Physics' },
     { id: 'chemistry', name: 'Chemistry' },
-    { id: 'mathematics', name: 'Mathematics' }
+    { id: 'mathematics', name: 'Mathematics' },
+    { id: 'other', name: 'Other', noun: 'miscellaneous' }
   ];
   var PRI = { high: 0, medium: 1, low: 2 };
   var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -273,7 +274,7 @@
     var body;
     if (!all.length) {
       body = h('div', { class: 'empty' },
-        'No ' + sub.name + ' tasks yet. ',
+        'No ' + (sub.noun || sub.name) + ' tasks yet. ',
         h('button', {
           type: 'button', class: 'btn-link', text: 'Add one',
           onclick: function () {
